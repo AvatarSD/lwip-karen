@@ -306,9 +306,9 @@ void lwip_u_boot_port() {
 	ip4_addr_t netmask;
 	ip4_addr_t gw;
 
-	IP4_ADDR(&addr, 192, 168, 10, 1);
+	IP4_ADDR(&addr, 192, 168, 1, 1);
 	IP4_ADDR(&netmask, 255, 255, 255, 0);
-	IP4_ADDR(&gw, 192, 168, 10, 2);
+	IP4_ADDR(&gw, 192, 168, 1, 10);
 
 	lwip_init();
 
