@@ -299,7 +299,9 @@ err_t websocket_accept(void* arg, struct tcp_pcb* newpcb, err_t err) {
     LWIP_UNUSED_ARG(arg);
     LWIP_UNUSED_ARG(err);
 
-	if(!web_socket_open) {
+    printf("--> lwip accept: from %i to %i\r\n", newpcb->local_port, newpcb->remote_port);
+
+    if (!web_socket_open) {
         tcp_recv(newpcb, websocket_recv);
         return ERR_OK;
     } else {
@@ -311,8 +313,8 @@ err_t websocket_accept(void* arg, struct tcp_pcb* newpcb, err_t err) {
 err_t http_accept(void* arg, struct tcp_pcb* newpcb, err_t err) {
     LWIP_UNUSED_ARG(arg);
     LWIP_UNUSED_ARG(err);
-
-	if(!web_socket_open) {
+    printf("--> lwip accept: from %i to %i\r\n", newpcb->local_port, newpcb->remote_port);
+    if (!web_socket_open) {
         tcp_recv(newpcb, http_recv);
         tcp_sent(newpcb, http_sent);
         return ERR_OK;
