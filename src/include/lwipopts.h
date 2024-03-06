@@ -8,6 +8,11 @@
 #define LWIP_NETCONN                    0
 #define LWIP_SOCKET                     0
 #define LWIP_DHCP                       1
+#define LWIP_MDNS_RESPONDER             1
+#define LWIP_IGMP                       1
+#define LWIP_ARP                        1
+
+#define HTTPD_USE_CUSTOM_FSDATA 1
 
 #define MEM_ALIGNMENT           		4
 #define MEM_SIZE                        (8 * 1024 * 1024)
