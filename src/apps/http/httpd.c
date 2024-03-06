@@ -2059,7 +2059,7 @@ http_parse_request(struct pbuf *inp, struct http_state *hs, struct altcp_pcb *pc
       if (!strncmp(data, "GET ", 4)) {
         sp1 = data + 3;
         /* received GET request */
-        LWIP_DEBUGF(HTTPD_DEBUG | LWIP_DBG_TRACE, ("Received GET request\"\n"));
+        LWIP_DEBUGF(HTTPD_DEBUG | LWIP_DBG_TRACE, ("Received GET request\"%s\"\n", data));
 #if LWIP_HTTPD_SUPPORT_POST
       } else if (!strncmp(data, "POST ", 5)) {
         /* store request type */
@@ -2263,7 +2263,7 @@ http_find_file(struct http_state *hs, const char *uri, int is_09)
       if (err == ERR_OK) {
         uri = file_name;
         file = &hs->file_handle;
-        LWIP_DEBUGF(HTTPD_DEBUG | LWIP_DBG_TRACE, ("Opened.\n"));
+        LWIP_DEBUGF(HTTPD_DEBUG | LWIP_DBG_TRACE, ("Opened: \'%s\'\n", file_name));
 #if LWIP_HTTPD_SSI
         tag_check = httpd_default_filenames[loop].shtml;
 #endif /* LWIP_HTTPD_SSI */
