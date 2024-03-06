@@ -12,6 +12,8 @@
 #define LWIP_IGMP                       1
 #define LWIP_ARP                        1
 
+#define LWIP_RAND() ((u32_t)rand())
+
 #define HTTPD_USE_CUSTOM_FSDATA 1
 
 #define MEM_ALIGNMENT           		4
