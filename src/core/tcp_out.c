@@ -314,7 +314,7 @@ tcp_write_checks(struct tcp_pcb *pcb, u16_t len)
       (pcb->state != CLOSE_WAIT) &&
       (pcb->state != SYN_SENT) &&
       (pcb->state != SYN_RCVD)) {
-    LWIP_DEBUGF(TCP_OUTPUT_DEBUG | LWIP_DBG_STATE | LWIP_DBG_LEVEL_SEVERE, ("tcp_write() called in invalid state\n"));
+    LWIP_DEBUGF(TCP_OUTPUT_DEBUG | LWIP_DBG_STATE | LWIP_DBG_LEVEL_SEVERE, ("tcp_write(%p) called in invalid state: %i\n", pcb, pcb->state));
     return ERR_CONN;
   } else if (len == 0) {
     return ERR_OK;
